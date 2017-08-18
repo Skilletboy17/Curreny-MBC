@@ -25,11 +25,30 @@ namespace MyCalc2
         public MainPage()
         {
             this.InitializeComponent();
+            string[] currancyArray = new string[5];
+            currancyArray[0] = "Dollar";
+            currancyArray[1] = "Euro";
+            currancyArray[2] = "Yen";
+            currancyArray[3] = "Peso";
+            currancyArray[4] = "Rupee";
+            currancyArray[5] = "BitCoin";
+            
         }
 
         private void OriginComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             
+        }
+
+        private void QuitButton_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Exit();
+        }
+
+        private void ConvertButton_Click(object sender, RoutedEventArgs e)
+        {
+            int i = int.Parse(InputTextBox.Text);    
+            OutputBox.Text = Convert.ToString(i);
         }
     }
 }

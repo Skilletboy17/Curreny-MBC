@@ -8,15 +8,29 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <ComboBox x:Name="OriginComboBox" HorizontalAlignment="Left" Height="75" Margin="278,287,0,0" VerticalAlignment="Top" Width="345" SelectionChanged="OriginComboBox_SelectionChanged"/>
-        <ComboBox x:Name="TargetComboBox" HorizontalAlignment="Left" Height="75" Margin="692,287,0,0" VerticalAlignment="Top" Width="345"/>
+        <ComboBox x:Name="OriginComboBox" HorizontalAlignment="Left" Height="75" Margin="278,287,0,0" VerticalAlignment="Top" Width="345" SelectionChanged="OriginComboBox_SelectionChanged">
+            <ComboBoxItem Content="Dollar" Height="50" Width="345"/>
+            <ComboBoxItem Content="Euro" Height="50" Width="345"/>
+            <ComboBoxItem Content="Yen" Height="50" Width="345"/>
+            <ComboBoxItem Content="Peso" Height="50" Width="345"/>
+            <ComboBoxItem Content="Rupee" Height="50" Width="345"/>
+            <ComboBoxItem Content="BitCoin" Height="50" Width="345"/>
+        </ComboBox>
+        <ComboBox x:Name="TargetComboBox" HorizontalAlignment="Left" Height="75" Margin="692,287,0,0" VerticalAlignment="Top" Width="345">
+            <ComboBoxItem Content="Dollar" Height="50" Width="345"/>
+            <ComboBoxItem Content="Euro" Height="50" Width="345"/>
+            <ComboBoxItem Content="Yen" Height="50" Width="345"/>
+            <ComboBoxItem Content="Peso" Height="50" Width="345"/>
+            <ComboBoxItem Content="Rupee" Height="50" Width="345"/>
+            <ComboBoxItem Content="BitCoin" Height="50" Width="345"/>
+        </ComboBox>
         <TextBox x:Name="InputTextBox" HorizontalAlignment="Left" Height="96" Margin="278,440,0,0" TextWrapping="Wrap" Text="Please enter amount to convert" VerticalAlignment="Top" Width="345"/>
         <TextBlock x:Name="OutputBox" HorizontalAlignment="Left" Height="96" Margin="692,440,0,0" TextWrapping="Wrap" Text="Output" VerticalAlignment="Top" Width="345"/>
-        <Button x:Name="ConvertButton" Content="Convert" HorizontalAlignment="Left" Height="84" Margin="278,596,0,0" VerticalAlignment="Top" Width="345"/>
-        <Button x:Name="QuitButton" Content="Exit" HorizontalAlignment="Left" Height="84" Margin="692,596,0,0" VerticalAlignment="Top" Width="345" RenderTransformOrigin="0.512,3.03"/>
-        <Image x:Name="BryceImageBox" HorizontalAlignment="Left" Height="200" Margin="278,56,0,0" VerticalAlignment="Top" Width="200"/>
-        <Image x:Name="KaitlinImageBox" HorizontalAlignment="Left" Height="200" Margin="837,56,0,0" VerticalAlignment="Top" Width="200"/>
-        <Image x:Name="MaxImageBox" HorizontalAlignment="Left" Height="200" Margin="555,56,0,0" VerticalAlignment="Top" Width="200"/>
+        <Button x:Name="ConvertButton" Content="Convert" HorizontalAlignment="Left" Height="84" Margin="278,596,0,0" VerticalAlignment="Top" Width="345" Click="ConvertButton_Click"/>
+        <Button x:Name="QuitButton" Content="Exit" HorizontalAlignment="Left" Height="84" Margin="692,596,0,0" VerticalAlignment="Top" Width="345" RenderTransformOrigin="0.512,3.03" Click="QuitButton_Click"/>
+        <Image x:Name="BryceImageBox" HorizontalAlignment="Left" Height="200" Margin="278,56,0,0" VerticalAlignment="Top" Width="200" Source="Assets/Bryce_Pic.png"/>
+        <Image x:Name="KaitlinImageBox" HorizontalAlignment="Left" Height="200" Margin="837,56,0,0" VerticalAlignment="Top" Width="200" Source="Assets/Kaitlin_Pic.png"/>
+        <Image x:Name="MaxImageBox" HorizontalAlignment="Left" Height="200" Margin="555,56,0,0" VerticalAlignment="Top" Width="200" Source="Assets/Max_Pic.png"/>
 
     </Grid>
 </Page>
