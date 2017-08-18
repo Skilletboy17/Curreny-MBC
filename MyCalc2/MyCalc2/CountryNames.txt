@@ -1,6 +1,1 @@
-﻿US Dollar
-Japanese Yen
-German Mark
-English Euro
-Mexican Peso
-Indian Rupee
+﻿US Dollar, Japanese Yen, German Mark, English Euro, Mexican Peso, Indian Rupee
