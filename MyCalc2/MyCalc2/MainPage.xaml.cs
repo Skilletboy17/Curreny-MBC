@@ -26,5 +26,10 @@ namespace MyCalc2
         {
             this.InitializeComponent();
         }
+
+        private void OriginComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+        }
     }
 }
