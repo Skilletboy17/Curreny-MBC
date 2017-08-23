@@ -24,22 +24,13 @@ namespace MyCalc2
     {
         public MainPage()
         {
-            this.InitializeComponent();
-            string[] currancyArray = new string[5];
-            currancyArray[0] = "Dollar";
-            currancyArray[1] = "Euro";
-            currancyArray[2] = "Yen";
-            currancyArray[3] = "Peso";
-            currancyArray[4] = "Rupee";
-            currancyArray[5] = "BitCoin";
+            this.InitializeComponent();           
             
         }
 
         private void OriginComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
         }
-
         private void QuitButton_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Exit();
@@ -50,5 +41,30 @@ namespace MyCalc2
             int i = int.Parse(InputTextBox.Text);    
             OutputBox.Text = Convert.ToString(i);
         }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+
+            string[] currancyArray = new string[6];
+            currancyArray[0] = "Dollar";
+            currancyArray[1] = "Euro";
+            currancyArray[2] = "Yen";
+            currancyArray[3] = "Peso";
+            currancyArray[4] = "Rupee";
+            currancyArray[5] = "BitCoin";
+
+
+            for (int i = 0; i < 6; i++)
+            {
+                OriginComboBox.Items.Add(currancyArray[i]);
+            }
+
+            for (int i = 0; i < 6; i++)
+            {
+                TargetComboBox.Items.Add(currancyArray[i]);
+            }
+        }
+
     }
 }
+
