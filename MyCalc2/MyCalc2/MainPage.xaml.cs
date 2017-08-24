@@ -29,7 +29,7 @@ namespace MyCalc2
         }
 
         private void OriginComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
+        {            
         }
         private void QuitButton_Click(object sender, RoutedEventArgs e)
         {
@@ -63,6 +63,16 @@ namespace MyCalc2
             {
                 TargetComboBox.Items.Add(currancyArray[i]);
             }
+
+            double[] exchangeRate = new double[6];
+            exchangeRate[0] = 1;
+            exchangeRate[1] = 0.8514;
+            exchangeRate[2] = 109.2040;
+            exchangeRate[3] = 17.7920;
+            exchangeRate[4] = 64.1000;
+            exchangeRate[5] = 0.0002;
+
+
         }
 
     }
