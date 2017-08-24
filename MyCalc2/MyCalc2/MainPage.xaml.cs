@@ -29,7 +29,8 @@ namespace MyCalc2
         }
 
         private void OriginComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {            
+        {
+            
         }
         private void QuitButton_Click(object sender, RoutedEventArgs e)
         {
@@ -38,8 +39,17 @@ namespace MyCalc2
 
         private void ConvertButton_Click(object sender, RoutedEventArgs e)
         {
-            int i = int.Parse(InputTextBox.Text);    
-            OutputBox.Text = Convert.ToString(i);
+            //int i = int.Parse(InputTextBox.Text);
+            //OutputBox.Text = Convert.ToString(i);
+            int selectedIndexOrg = OriginComboBox.SelectedIndex;
+            int selectedIndexTarg = TargetComboBox.SelectedIndex;
+            var selectedCountryOrg = OriginComboBox.SelectedItem;
+            var selectedCountryTrag = TargetComboBox.SelectedItem;
+
+            // OutputBox.Text = string.Concat(Convert.ToString(selectedIndexOrg) , Convert.ToString(selectedIndexTarg) , Convert.ToString(selectedCountryOrg) , Convert.ToString(selectedCountryTrag));
+            ratesCombo.SelectedIndex = selectedIndexTarg;
+            OutputBox.Text = Convert.ToString(ratesCombo.SelectedItem);
+            if 
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
@@ -72,9 +82,23 @@ namespace MyCalc2
             exchangeRate[4] = 64.1000;
             exchangeRate[5] = 0.0002;
 
+            for (int i = 0; i < 6; i++)
+            {
+                ratesCombo.Items.Add(exchangeRate[i]);
+            }
+        }
+
+        private void ratesCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var combo = sender as ComboBoxItem;
+            var selectedItem = TargetComboBox.SelectedItem;
 
         }
 
+        private void TargetComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+        }
     }
 }
 

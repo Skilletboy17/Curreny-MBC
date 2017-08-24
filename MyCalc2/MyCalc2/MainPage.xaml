@@ -10,7 +10,7 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <ComboBox x:Name="OriginComboBox" HorizontalAlignment="Left" Height="75" Margin="278,287,0,0" VerticalAlignment="Top" Width="345" SelectionChanged="OriginComboBox_SelectionChanged"/>
 
-        <ComboBox x:Name="TargetComboBox" HorizontalAlignment="Left" Height="75" Margin="692,287,0,0" VerticalAlignment="Top" Width="345"/>
+        <ComboBox x:Name="TargetComboBox" HorizontalAlignment="Left" Height="75" Margin="692,287,0,0" VerticalAlignment="Top" Width="345" SelectionChanged="TargetComboBox_SelectionChanged"/>
         <TextBox x:Name="InputTextBox" HorizontalAlignment="Left" Height="96" Margin="278,440,0,0" TextWrapping="Wrap" Text="Please enter amount to convert" VerticalAlignment="Top" Width="345"/>
         <TextBlock x:Name="OutputBox" HorizontalAlignment="Left" Height="96" Margin="692,440,0,0" TextWrapping="Wrap" Text="Output" VerticalAlignment="Top" Width="345"/>
         <Button x:Name="ConvertButton" Content="Convert" HorizontalAlignment="Left" Height="84" Margin="278,596,0,0" VerticalAlignment="Top" Width="345" Click="ConvertButton_Click"/>
@@ -18,6 +18,7 @@
         <Image x:Name="BryceImageBox" HorizontalAlignment="Left" Height="200" Margin="278,56,0,0" VerticalAlignment="Top" Width="200" Source="Assets/Bryce_Pic.png"/>
         <Image x:Name="KaitlinImageBox" HorizontalAlignment="Left" Height="200" Margin="837,56,0,0" VerticalAlignment="Top" Width="200" Source="Assets/Kaitlin_Pic.png"/>
         <Image x:Name="MaxImageBox" HorizontalAlignment="Left" Height="200" Margin="555,56,0,0" VerticalAlignment="Top" Width="200" Source="Assets/Max_Pic.png"/>
+        <ComboBox x:Name="ratesCombo" HorizontalAlignment="Left" Margin="92,99,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ratesCombo_SelectionChanged"/>
 
     </Grid>
 </Page>
