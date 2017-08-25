@@ -39,17 +39,38 @@ namespace MyCalc2
 
         private void ConvertButton_Click(object sender, RoutedEventArgs e)
         {
-            //int i = int.Parse(InputTextBox.Text);
-            //OutputBox.Text = Convert.ToString(i);
+            double i = Convert.ToDouble(InputTextBox.Text);
+
             int selectedIndexOrg = OriginComboBox.SelectedIndex;
             int selectedIndexTarg = TargetComboBox.SelectedIndex;
             var selectedCountryOrg = OriginComboBox.SelectedItem;
             var selectedCountryTrag = TargetComboBox.SelectedItem;
 
-            // OutputBox.Text = string.Concat(Convert.ToString(selectedIndexOrg) , Convert.ToString(selectedIndexTarg) , Convert.ToString(selectedCountryOrg) , Convert.ToString(selectedCountryTrag));
+            OriginRate.SelectedIndex = selectedIndexOrg;
             ratesCombo.SelectedIndex = selectedIndexTarg;
-            OutputBox.Text = Convert.ToString(ratesCombo.SelectedItem);
-            if 
+            var selectedRates = ratesCombo.SelectedItem;
+            var originRates = OriginRate.SelectedItem;
+            
+            if (OriginComboBox.SelectedIndex==0 && TargetComboBox.SelectedIndex<6)
+            {
+                double convert = i * Convert.ToDouble(selectedRates);
+                convert=Math.Round(convert, 3);
+                OutputBox.Text = Convert.ToString(convert);
+            }
+            else if (OriginComboBox.SelectedIndex == 0 && TargetComboBox.SelectedIndex == 0)
+            {
+                double convert = i * Convert.ToDouble(selectedRates);
+               convert=Math.Round(convert, 2);
+                OutputBox.Text = Convert.ToString(convert);
+            }
+            else if (OriginComboBox.SelectedIndex >= 1 && TargetComboBox.SelectedIndex < 6)
+            {
+                double dollar = i / Convert.ToDouble(originRates);
+                double convert = dollar * Convert.ToDouble(selectedRates);
+                convert=Math.Round(convert, 4);
+                OutputBox.Text = Convert.ToString(convert);
+            }
+
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
@@ -86,6 +107,10 @@ namespace MyCalc2
             {
                 ratesCombo.Items.Add(exchangeRate[i]);
             }
+            for (int i = 0; i < 6; i++)
+            {
+                OriginRate.Items.Add(exchangeRate[i]);
+            }
         }
 
         private void ratesCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -98,6 +123,11 @@ namespace MyCalc2
         private void TargetComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             
+        }
+
+        private void OriginRate_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }
