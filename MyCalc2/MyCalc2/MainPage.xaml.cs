@@ -39,7 +39,7 @@ namespace MyCalc2
 
         private void ConvertButton_Click(object sender, RoutedEventArgs e)
         {
-            double i = Convert.ToDouble(InputTextBox.Text);
+            double i = Convert.ToDouble(InputTextBox.Text);//changes the text to a double
 
             int selectedIndexOrg = OriginComboBox.SelectedIndex;
             int selectedIndexTarg = TargetComboBox.SelectedIndex;
